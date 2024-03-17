@@ -1,9 +1,18 @@
-import React from "react";
+import Navbar from './componensts/Navbar.js'
+import Filter from './componensts/Filter.js'
+import Cards from './componensts/Cards.js'
+import {apiUrl, filterData} from './data.js'
 
 function App() {
+
+
   return (
-    <div className="App">
-      <p className='text-3xl bg-red-800 text-center'>Hello boys</p>
+    <div>
+      <Navbar/>
+
+      <Filter filterData={filterData}/>
+
+      <Cards/>
     </div>
   );
 }
