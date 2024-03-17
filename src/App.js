@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './componensts/Navbar.js'
 import Filter from './componensts/Filter.js'
 import Cards from './componensts/Cards.js'
-import {apiUrl, filterData } from './data.js'
+import {apiUrl ,filterData} from './data.js'
+import {useEffect } from 'react'
+import { toast } from 'react-toastify'
 const App = () => {
+
+
+  const[courses, setCourses] = useState(null);
+    
+  useEffect( ()=>{
+    const FetchData = async() =>{
+      try {
+        const res = await fetch(apiUrl);
+        const output = await res.json();
+        //save data into a variable 
+        setCourses(output.data);
+      } catch (error) {
+        toast.error("something went wrong");
+      }
+    }
+    FetchData();
+  },[])
+  
   return (
     <div>
       App
@@ -11,7 +31,7 @@ const App = () => {
 
       <Filter filterData={filterData}/>
 
-      <Cards data={apiUrl}/>
+      <Cards courses={cources}/>
     </div>
   )
 }
