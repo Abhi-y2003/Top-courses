@@ -4,12 +4,10 @@ const Navbar = () => {
   return (
     <div>
         <nav>
-            <h2>
-               Top-Courses
-            </h2>
-        </nav>
+            <h3>Top Courses</h3>
+        </nav> 
     </div>
   )
 }
 
-export default Navbar;
+export default Navbar
