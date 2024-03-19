@@ -41,7 +41,7 @@ const App = () => {
       <Navbar/>
       </div>
       
-      <div className='bg-[#4d4757]'>
+      <div className='bg-[#4d4757] h-[100%]'>
       <div>
       <Filter filterData={filterData} category={category} setCategory={setCategory}/>
       </div>
